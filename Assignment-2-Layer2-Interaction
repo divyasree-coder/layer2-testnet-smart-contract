@@ -1,0 +1,27 @@
+import tkinter as tk
+
+value = 0
+
+def set_data():
+    global value
+    value = entry.get()
+    output.set(f"Value '{value}' stored successfully\nGas Fee: Low")
+
+def get_data():
+    output.set(f"Stored Value: {value}")
+
+root = tk.Tk()
+root.title("Assignment 2 - Layer 2 Interaction")
+
+tk.Label(root, text="Smart Contract Simulation", font=("Arial", 14)).pack(pady=10)
+
+entry = tk.Entry(root)
+entry.pack(pady=5)
+
+tk.Button(root, text="Set Value", command=set_data).pack(pady=5)
+tk.Button(root, text="Get Value", command=get_data).pack(pady=5)
+
+output = tk.StringVar()
+tk.Label(root, textvariable=output).pack(pady=20)
+
+root.mainloop()
